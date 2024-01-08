@@ -1,0 +1,12 @@
+<section>
+    <h1>{{ topic }}</h1>
+
+    <button [disabled]="isDisabled" (click)="setVisibility()">Show blog details.</button>
+</section>
+
+<section *ngIf="isVisible">
+    <section *ngFor="let post of getAllPosts()">
+        <h3>{{post.title}}</h3>
+        <p>{{post.description}}</p>
+    </section>
+</section>
