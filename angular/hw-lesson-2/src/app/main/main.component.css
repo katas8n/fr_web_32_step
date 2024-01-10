@@ -1,0 +1,6 @@
+section {
+    display: flex;
+    border: 1px solid magenta;
+    margin: 2rem;
+    padding: 1rem;
+}

@@ -1,0 +1,11 @@
+<section>
+    <input (change)="readValue(newInputValue)" [value]="inputValue" type="text" #newInputValue>
+
+    <h4>Current input value : {{inputValue}}</h4>
+
+    <button (click)="addNewElement()">Add new post!</button>
+</section>
+
+<section *ngFor="let item of data">
+    <h3>{{ item }}</h3>
+</section>
