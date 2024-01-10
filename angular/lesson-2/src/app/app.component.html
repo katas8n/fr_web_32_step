@@ -1,1 +1,22 @@
 <app-child (emitListener)="readTextareaFromChild($event)" [data]="data"></app-child>
+<app-second-child (secondEmitter)="listenToTheSecondEvent($event)"></app-second-child>
+<!-- <header>
+    <button (click)="onChangeVisibility()">Sign Up</button>
+</header>
+<main>
+    <section *ngIf="isVisibleForm">
+        <input type="text" [(ngModel)]="login">
+        <input type="text" [(ngModel)]="password">
+
+        <button (click)="onSubmitHandler($event)">
+            Send
+        </button>
+    </section>
+
+    <section *ngIf="!isVisibleForm">
+        <section *ngFor="let user of users">
+            <h3>{{user}}</h3>
+        </section>
+    </section>
+</main>
+<footer></footer> -->

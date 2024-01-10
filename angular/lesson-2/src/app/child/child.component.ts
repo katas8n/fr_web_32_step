@@ -7,7 +7,9 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ChildComponent {
  @Input() data:any [];
+ @Input() sayHello;
  @Output() emitListener:any = new EventEmitter();
+
  public inputValue:string = "";
  public areaValue:string = "";
 

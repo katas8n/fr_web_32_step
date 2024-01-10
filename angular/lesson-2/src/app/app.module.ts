@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'
 import { ChildComponent } from './child/child.component';
+import { SecondChildComponent } from './second-child/second-child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    SecondChildComponent
   ],
   imports: [
     BrowserModule,
