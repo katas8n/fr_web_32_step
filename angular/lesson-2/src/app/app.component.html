@@ -1,1 +1,1 @@
-<app-child [data]="data"></app-child>
+<app-child (emitListener)="readTextareaFromChild($event)" [data]="data"></app-child>

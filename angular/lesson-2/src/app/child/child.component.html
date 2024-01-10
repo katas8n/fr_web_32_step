@@ -1,6 +1,8 @@
 <section>
     <input (change)="readValue(newInputValue)" [value]="inputValue" type="text" #newInputValue>
 
+    <textarea [(ngModel)]="areaValue" rows="10"></textarea>
+
     <h4>Current input value : {{inputValue}}</h4>
 
     <button (click)="addNewElement()">Add new post!</button>

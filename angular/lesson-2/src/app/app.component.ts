@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +11,9 @@ export class AppComponent {
     "Anothere piece of data",
     "Something else"
   ]
+
+  public readTextareaFromChild(event: string) {
+    console.log(event);
+    console.log("Textarea value from child:", event);
+  }
 }
