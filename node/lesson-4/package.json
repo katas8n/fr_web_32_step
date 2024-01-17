@@ -1,0 +1,16 @@
+{
+  "name": "lesson-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start:sweden": "node app.js Sweden UTC+2 timezone-1",
+    "start:norway": "node app.js Norway UTC+4 timezone-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.5.3"
+  }
+}

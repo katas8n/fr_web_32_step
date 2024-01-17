@@ -1,0 +1,8 @@
+<h2>Todo list</h2>
+
+<input type="text" [(ngModel)]="newTodo" placeholder="ADD NEW TODO!">
+<button (click)="addNewTodo()">Add new task</button>
+
+<section *ngFor="let todoItem of getAllTodos()">
+    <app-todo-item [todoItem]="todoItem"></app-todo-item>
+</section>

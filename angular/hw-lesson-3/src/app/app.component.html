@@ -1,0 +1,5 @@
+<app-child (taskEmitter)="getData($event)"></app-child>
+
+<section *ngFor="let task of tasks">
+    <h2>{{task}}</h2>
+</section>

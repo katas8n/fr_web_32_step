@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output, OnInit } from '@angular/core';
   templateUrl: './second-child.component.html',
   styleUrl: './second-child.component.css'
 })
-export class SecondChildComponent implements OnInit{
+export class SecondChildComponent implements OnInit {
   @Output() secondEmitter = new EventEmitter();
 
   public data = [
