@@ -1,0 +1,27 @@
+<h2>People details: </h2>
+
+<section *ngIf="!isFiltered">
+    <section *ngFor="let person of getPeople()">
+        <a routerLink="/people/{{person.id}}">
+            {{
+                person.name
+            }}
+        </a>
+    </section>
+</section>
+
+<section *ngIf="isFiltered">
+       <h2>
+            Huck you!
+       </h2>
+</section>
+
+<select name="filteredValue" id="filteredValue" #value (change)="onChangeHandler(value)">
+    <option value="reset">Reset</option>
+    <option value="biggerThan3">Name length bigger than 3</option>
+    <option value="biggerThan4">Name length bigger than 4</option>
+    <option value="biggerThan5">Name length bigger than 5</option>
+</select>
+
+
+<router-outlet></router-outlet>

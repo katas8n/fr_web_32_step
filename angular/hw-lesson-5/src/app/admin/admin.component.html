@@ -1,0 +1,10 @@
+<form #form="ngForm" (submit)="onSubmitHandler(form)">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input name="name" matInput ngModel placeholder="Name" value="">
+    </mat-form-field>
+
+    <div class="button-wrapper">
+        <button mat-raised-button color="accent">Add new Person</button>
+    </div>
+  </form>
