@@ -1,0 +1,10 @@
+<section>
+    <div *ngFor="let pizzaItem of pizza">
+        <h3>{{ pizzaItem.label }}</h3>
+        <h4>{{ pizzaItem.price }}</h4>
+
+        <div class="btn-wrapper">
+            <button>Buy!</button>
+        </div>
+    </div>
+</section>

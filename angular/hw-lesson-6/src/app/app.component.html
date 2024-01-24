@@ -1,0 +1,17 @@
+<header>
+  <nav>
+    <a routerLink="/">
+      Home Page
+    </a>
+    
+    <a *ngFor="let category of categories" [routerLink]="category.path">
+      {{category.title}}
+    </a>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <h3>All rights reserved(c) 2024</h3>
+</footer>
