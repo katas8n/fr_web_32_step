@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResourceService } from '../resources.service';
+import { ResourceService } from '../services/resources.service';
 
 @Component({
   selector: 'app-resources',
@@ -7,9 +7,13 @@ import { ResourceService } from '../resources.service';
   styleUrl: './resources.component.scss'
 })
 export class ResourcesComponent {
+  public resources:any = [];
+
   constructor(
-    public resources:ResourceService
+    public resourcesService:ResourceService
   ) {
-    resources.getContact()
+    this.resourcesService.getContact().subscribe(data => {
+      this.resources = data;
+    })
   }
 }

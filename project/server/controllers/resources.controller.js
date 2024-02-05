@@ -1,8 +1,15 @@
-const { resourcesModel } = require('../models/resources.model');
+const mongoose = require('mongoose');
 
+const resources = mongoose.model("Resources", {});
 
-function getResources(req, res) {
-    return res.json(resourcesModel);
+async function getResources(req, res) {
+    try {
+        const foundResources = await resources.find({});
+        
+        return res.json(foundResources);
+    } catch(e) {
+        console.log('[e.message]', e.message);
+    }
 }
 
 module.exports = {

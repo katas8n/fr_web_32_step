@@ -1,0 +1,14 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server" : "npm run start:server --prefix server",
+    "client" : "ng serve --prefix client",
+    "watch" : "npm run server & ng serve client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

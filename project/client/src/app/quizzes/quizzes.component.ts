@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizzesService } from '../quizzes.service';
+
+import { QuizzesService } from '../services/quizzes.service';
+
+import { changeStateByKey } from '../utils/changeState'
 
 @Component({
   selector: 'app-quizzes',
@@ -7,29 +10,14 @@ import { QuizzesService } from '../quizzes.service';
   styleUrl: './quizzes.component.scss'
 })
 export class QuizzesComponent implements OnInit{
+  public topics = this.quizzesService.topics;
   public quizzes: any;
-  
-  public topics: any[] = [
-    {
-      label: "Front-end",
-      url: "/quizzes/front-end"
-    },
-    {
-      label: "Back-end",
-      url: "/quizzes/back-end"
-    },
-    {
-      label: "QA",
-      url: "/quizzes/qa"
-    },
-  ]
-
   constructor(
     public quizzesService:QuizzesService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
-    console.log( this.quizzesService.currentTopic)
 
     if(!this.quizzesService.currentTopic){
       this.quizzesService.getQuizzes().subscribe(data => {
@@ -48,24 +36,27 @@ export class QuizzesComponent implements OnInit{
         this.quizzes = data;
       });
     }
+
   }
 
   public onClickHandler(link:HTMLElement) {
     switch(link.textContent.trim().toLowerCase()) {
       case "front-end": 
+        this.topics = changeStateByKey(this.topics, link, "isActive", true);
         this.quizzesService.getQuizzesFront();
+
         break;
       case "back-end": 
+        this.topics = changeStateByKey(this.topics, link, "isActive", true);
         this.quizzesService.getQuizzesBack();
         break;
       case "qa": 
+      this.topics = changeStateByKey(this.topics, link, "isActive", true);
         this.quizzesService.getQuizzesQA();
         break;
 
       default: 
         break;
     }
-
-    console.log(this.quizzes)
   }
 }

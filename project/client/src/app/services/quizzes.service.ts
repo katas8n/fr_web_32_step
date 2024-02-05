@@ -7,7 +7,27 @@ import { catchError, Observable } from 'rxjs';
 })
 export class QuizzesService {
   public currentTopic:string;
-
+  public topics: any[] = [
+    {
+      label: "Front-end",
+      url: "/quizzes/front-end",
+      cover: "../../assets/front-end.svg",
+      isActive: false
+    },
+    {
+      label: "Back-end",
+      url: "/quizzes/back-end",
+      cover: "../../assets/back-end.jpeg",
+      isActive: false
+    },
+    {
+      label: "QA",
+      url: "/quizzes/qa",
+      cover: "../../assets/qa.png",
+      isActive: false
+    },
+  ]
+  
   constructor(
     public http:HttpClient
   ) { }
@@ -22,7 +42,6 @@ export class QuizzesService {
       })
     );
   }
-
   public getQuizzesBack():Observable<any> {
     this.currentTopic = "back-end";
 

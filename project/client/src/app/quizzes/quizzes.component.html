@@ -3,8 +3,13 @@
         *ngFor="let topic of topics"
         [routerLink]="topic.url"
         #link
-        >
-    {{ topic.label }}
+    >
+      
+
+        <button mat-stroked-button [color]="topic.isActive ? 'accent' : 'primary'">
+            <img class="img" [src]="topic.cover" alt="There is nothing here yet!">
+            {{ topic.label }}
+        </button>
     </a>
 </nav>
 <section class="sub-header" *ngFor="let quiz of quizzes">

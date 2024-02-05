@@ -1,0 +1,18 @@
+<p>
+    <mat-toolbar color="accent">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <div class="link-wrapper">
+            <a [routerLink]="routerLink.href" *ngFor="let routerLink of routerLinks">
+                {{routerLink.label}}
+            </a>
+        </div>
+      </mat-menu>
+
+      <span>My App</span>
+    </mat-toolbar>
+  </p>
+  

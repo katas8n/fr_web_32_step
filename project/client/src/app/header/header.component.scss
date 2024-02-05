@@ -1,0 +1,17 @@
+.link-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a {
+    padding: .5em;
+    text-decoration: none;
+    color: aliceblue;
+    background: #ff4081;
+    font-size: .8em;
+}
+
+a:first-child {
+    border-bottom: 1px solid aliceblue;
+}

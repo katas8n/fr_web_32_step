@@ -11,8 +11,6 @@ export class ResourceService {
   ) { }
 
   getContact() {
-    const result = this.httpClient.get("http://localhost:3000/resources").subscribe(el => {
-      console.log(el)
-    });
+    return this.httpClient.get("http://localhost:3000/resources");
   }
 }
