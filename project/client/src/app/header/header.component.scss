@@ -15,3 +15,19 @@ a {
 a:first-child {
     border-bottom: 1px solid aliceblue;
 }
+
+mat-accordion {
+    position: absolute;
+    top: 8%;
+    z-index: 9;
+}
+
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    display: flex;
+    align-items: center;
+}

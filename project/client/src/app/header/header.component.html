@@ -1,18 +1,42 @@
 <p>
     <mat-toolbar color="accent">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>
-      </button>
 
-      <mat-menu #menu="matMenu">
-        <div class="link-wrapper">
-            <a [routerLink]="routerLink.href" *ngFor="let routerLink of routerLinks">
+      <section>
+        <button mat-icon-button (click)="setVisibility()">
+          <mat-icon>menu</mat-icon>
+        </button>
+  
+  
+        <mat-accordion [style]="isVisibleExpansionPanel ? 'display:flex; flex-direction:column;' : 'display:none'">
+            <mat-expansion-panel *ngFor="let routerLink of routerLinks" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+  
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{routerLink.label}}
+              </mat-panel-title>
+              
+              <mat-panel-description>
+                {{routerLink.info}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+  
+            <a (click)="setVisibility()" [routerLink]="routerLink.href" >
                 {{routerLink.label}}
             </a>
-        </div>
-      </mat-menu>
+          </mat-expansion-panel>
+        </mat-accordion>
+  
+  
+        <span>My App</span>
+      </section>
 
-      <span>My App</span>
+
+      <section>
+        <a [routerLink]="auth.href">
+          {{auth.label}}
+        </a>
+      </section>
     </mat-toolbar>
   </p>
   

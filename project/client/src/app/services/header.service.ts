@@ -6,18 +6,26 @@ import { IRouterLink } from '../interfaces/RouterLink';
   providedIn: 'root'
 })
 export class HeaderService {
+  public authLink = {
+    label:"Sign In",
+    href:"/auth",
+  }
+
   private routerLinks: IRouterLink[] = [
     {
       label:"Quizzes",
-      href:  "/quizzes"
+      href:  "/quizzes",
+      info: "Here there are quizzes where you can check your knowledges according to your specialization."
     },
     {
       label:"Resources",
-      href:"/resources"
+      href:"/resources",
+      info: "Here there are links where you can find useful resources which will fit to ur specialization."
     },
     {
       label:"Profile",
-      href:"/profile"
+      href:"/profile",
+      info: "It's ur personal page where you can see ur achivments and add there information about yourself."
     },
   ]
   constructor() { }
@@ -26,4 +34,6 @@ export class HeaderService {
   public getRouterLinks(): IRouterLink[] {
     return this.routerLinks;
   }
+
+
 }

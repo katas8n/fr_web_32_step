@@ -1,4 +1,5 @@
 export interface IRouterLink {
     href: string,
-    label: string
+    label: string,
+    info: string
 }

@@ -1,1 +1,21 @@
-<p>auth works!</p>
+<section class="err-wrapper">
+    <h3>{{errMessage}}</h3>
+</section>
+
+<section class="form-wrapper">
+    <form (submit)="formHandler(ngForm)" class="form" #ngForm="ngForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>E-mail</mat-label>
+            <input ngModel type="email" name="email" matInput placeholder="Email">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input ngModel type="password" name="password" matInput placeholder="Password">
+        </mat-form-field>
+    
+        <div class="btn-wrapper">
+            <button type="submit" mat-raised-button color="accent">Sign In</button>
+        </div>
+    </form>
+</section>

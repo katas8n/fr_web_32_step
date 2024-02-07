@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../services/header.service';
 
 import { QuizzesService } from '../services/quizzes.service';
 
@@ -13,12 +14,12 @@ export class QuizzesComponent implements OnInit{
   public topics = this.quizzesService.topics;
   public quizzes: any;
   constructor(
-    public quizzesService:QuizzesService
+    public quizzesService:QuizzesService,
+    public headerService:HeaderService
   ) {
   }
 
   ngOnInit(): void {
-
     if(!this.quizzesService.currentTopic){
       this.quizzesService.getQuizzes().subscribe(data => {
        this.quizzes = data;

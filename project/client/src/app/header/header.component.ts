@@ -11,11 +11,17 @@ import { IRouterLink } from '../interfaces/RouterLink';
 })
 export class HeaderComponent {
   public routerLinks:IRouterLink[] = [];
+  public panelOpenState:boolean = true;
+  public isVisibleExpansionPanel:boolean = false;
+  public auth = this.headerService.authLink;
 
   constructor(
     public headerService:HeaderService
   ) {
+  }
 
+  public setVisibility() {
+    this.isVisibleExpansionPanel = !this.isVisibleExpansionPanel;
   }
 
   ngOnInit(): void {
