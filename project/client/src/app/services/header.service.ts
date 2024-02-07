@@ -7,7 +7,7 @@ import { IRouterLink } from '../interfaces/RouterLink';
 })
 export class HeaderService {
   public authLink = {
-    label:"Sign In",
+    label:"Login", //
     href:"/auth",
   }
 
