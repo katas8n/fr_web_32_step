@@ -1,0 +1,6 @@
+<form #ngForm="ngForm" (submit)="addNewTask(ngForm)">
+    <input type="text" ngModel name="title" />
+    <input type="text" ngModel name="description" />
+
+    <button>Submit</button>
+</form>

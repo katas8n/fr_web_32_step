@@ -1,0 +1,6 @@
+<nav>
+    <a *ngFor="let route of routes" [routerLink]="route.href">
+        {{ route.lable }}
+    </a>
+</nav>
+<router-outlet></router-outlet>
